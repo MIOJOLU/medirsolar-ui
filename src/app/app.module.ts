@@ -7,6 +7,7 @@ import {RouterModule} from "@angular/router";
 import { HomeComponent } from './components/home/home.component';
 import { MedicaoComponent } from './components/medicao/medicao.component';
 import { EstatisticaComponent } from './components/estatistica/estatistica.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,11 @@ import { EstatisticaComponent } from './components/estatistica/estatistica.compo
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '', redirectTo: '/home', pathMatch: 'full'},
-      {path: 'home', component: HomeComponent}
-    ])
+      {path: 'home', component: HomeComponent},
+      {path: 'medicoes', component: MedicaoComponent},
+      {path: 'estatistica', component: EstatisticaComponent}
+    ]),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

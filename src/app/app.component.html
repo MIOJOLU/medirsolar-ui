@@ -1,11 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-transparent fixed-top py-3 px-5">
-    <div class="col brand text-secondary"><b class="text-primary">m</b>s</div>
-    <div class="col text-end">
-      <span class="pe-5" routerLink="/home">Home</span>
-      <span class="pe-5" routerLink="/medicoes">Medições</span>
-      <span class="pe-3" routerLink="/estatistica">Estatística</span>
-    </div>
+  <div class="col brand text-secondary"><b class="text-primary">m</b>s</div>
+  <div class="col text-end">
+    <a class="pe-5" href="/home">Home</a>
+    <a class="pe-5" href="/medicoes">Medições</a>
+    <a class="pe-3" href="/estatistica">Estatística</a>
+  </div>
 </nav>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>
