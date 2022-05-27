@@ -7,10 +7,12 @@
   font-weight: 400;
 }
 
-.classification{
-  height: 350px;
+.refresh{
+  &:hover{
+    color: #FFD200;
+  }
 }
 
-fa-icon{
+.temp, .umi{
   font-size: 4.2rem
 }

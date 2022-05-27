@@ -1,14 +1,22 @@
-<div class="vh-100 container-fluid">
-  <nav class="navbar navbar-expand-lg bg-transparent py-3 px-5">
-    <div class="col brand text-secondary"><b class="text-primary">m</b>s</div>
-    <div class="col text-end">
-      <a class="pe-5" href="/home">Home</a>
-      <a class="pe-5" href="/medicoes">Medições</a>
-      <a class="pe-3" href="/estatistica">Estatística</a>
-    </div>
-  </nav>
-
-  <main class="container">
+<div class="vh-100 container-fluid d-flex flex-column justify-content-between">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg bg-transparent py-3 px-5">
+      <div class="col brand text-secondary"><b class="text-primary">m</b>s</div>
+      <div class="col text-end">
+        <a class="pe-5" href="/home">Home</a>
+        <a class="pe-5" href="/medicoes">Medições</a>
+        <a class="pe-3" href="/estatistica" >Estatística</a>
+      </div>
+    </nav>
+  </div>
+  <div class="row">
     <router-outlet></router-outlet>
-  </main>
+  </div>
+  <div class="row">
+    <footer class="bg-light">
+      <div class="footer-copyright text-center py-3">
+        Feito com ♥ por MedirSolar
+      </div>
+    </footer>
+  </div>
 </div>

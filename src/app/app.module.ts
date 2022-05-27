@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MedicaoComponent } from './components/medicao/medicao.component';
 import { EstatisticaComponent } from './components/estatistica/estatistica.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       {path: 'medicoes', component: MedicaoComponent},
       {path: 'estatistica', component: EstatisticaComponent}
     ]),
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,40 @@
-
-<div class="row pt-5">
-  <div class="col text">
-    <div>
-      <h1 class="title pb-3">Medições</h1>
-      <h5 class="subtitle">última atualização</h5>
-      <p>{{medicao.data}}</p>
+<div class="container">
+  <div class="row pt-5 mt-5">
+    <div class="col text">
+      <div>
+        <h1 class="title pb-3">Medições</h1>
+        <h5 class="subtitle"><button (click)="getAll()" class="btn p-0 m-0"><fa-icon class="refresh" [icon]="faArrowsRotate" size="lg"></fa-icon></button> última atualização</h5>
+        <p>{{medicao.data.getDay()}} de {{meses[medicao.data.getMonth()]}} de {{medicao.data.getFullYear()}} às {{medicao.data.getHours()}}:{{medicao.data.getMinutes()}}hrs</p>
+      </div>
+      <table style="height: 100px;">
+        <tbody>
+        <tr>
+          <td>
+            <div class="d-flex flex-column align-items-center pe-5 pt-4" >
+              <fa-icon [icon]="faTemperatureHalf" [rotate]="90" class="d-flex text-danger temp" ></fa-icon>
+              <span class="text-muted label align-content-center">Temperatura</span>
+            </div>
+          </td>
+          <td>
+            <span class="ps-4" style="font-size:30px">{{medicao.temperatura}}°C</span>
+          </td>
+        </tr>
+        <tr>
+          <div class="d-flex flex-column align-items-center pe-5 pt-4" >
+            <td><fa-icon [icon]="faDroplet" class="d-flex text-info umi"></fa-icon></td>
+            <td ><span class="text-muted label align-content-center ">Umidade</span></td>
+          </div>
+          <td ><span class="ps-4" style="font-size:30px">{{medicao.umidade}}%</span></td>
+        </tr>
+        </tbody>
+      </table>
     </div>
-    <table style="height: 100px;">
-      <tbody>
-      <tr>
-        <td><fa-icon [icon]="faTemperatureHalf" [rotate]="90" class="pe-5"></fa-icon></td>
-        <td ><span class="text-muted pe-2 label align-content-center">Temperatura:</span></td>
-        <td ><span class="">{{medicao.temperatura}} C</span></td>
-      </tr>
-      <tr>
-        <td><fa-icon [icon]="faDroplet" class="pe-5"></fa-icon></td>
-        <td ><span class="text-muted pe-2 label align-content-center">Umidade:</span></td>
-        <td ><span class="">{{medicao.umidade}}%</span></td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="col align-items-end d-flex">
+      <div class="row align-items-end">
+        <img class="classification" src="{{image}}">
+        <p class="pt-3">{{message}}.</p>
+      </div>
+    </div>
   </div>
-  <div class="col justify-content-center">
-    <img class="classification" src="assets/images/cold1.png">
-    <p>{{temperatureIndex}}</p>
-  </div>
+
 </div>

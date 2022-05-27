@@ -1,1 +1,58 @@
-<p>estatistica works!</p>
+<div class="container">
+  <div class="row">
+    <img src="assets/images/undraw_data_input_fxv2.svg" style="width: 250px">
+    <h1 class="title pt-2 pb-3 ps-0 ms-0">Estatística</h1>
+  </div>
+  <div class="row">
+    <table class="pt-3">
+      <thead>
+      <tr>
+        <th>
+          Data da Medição
+        </th>
+        <th>Unidade (*)</th>
+        <th>
+            <span>
+             Temperatura Máx
+              <button class="btn p-0 m-0" (click)="orderByTemperaturaMax()">
+                <fa-icon *ngIf="isAsc" [icon]="faArrowDown19"></fa-icon>
+                <fa-icon *ngIf="!isAsc" [icon]="faArrowDown91"></fa-icon>
+              </button>
+            </span>
+        </th>
+        <th>Temperatura Min</th>
+        <th>Umidade Máx</th>
+        <th>Umidade Min</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let medicao of medicoes">
+        <td>
+          <p>{{medicao.data}}</p>
+        </td>
+
+        <td>
+          <p>{{medicao.unidade}}</p>
+        </td>
+        <td>
+          <p>{{medicao.tempMax}}°C</p>
+        </td>
+        <td>
+          <p>{{medicao.tempMin}}°C</p>
+        </td>
+        <td>
+          <p>{{medicao.umiMax}}%</p>
+        </td>
+        <td>
+          <p>{{medicao.umiMin}}%</p>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <p class="pt-3" style="font-size: 12px">(*) O campo unidade da tabela indica em qual arduíno a informação foi retirada: I (arduíno conectado via internet)
+      ou S (arduíno sem internet).
+    </p>
+  </div>
+</div>
